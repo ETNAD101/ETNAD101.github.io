@@ -62,7 +62,7 @@ pub fn get_category(category: Category) -> Vec<MenuItem> {
             MenuItem::new(Category::Entree, "Salmon With Garlic Cream Sauce".to_string(), "/assets/img/Salmon.jpg".to_string(), 11.99),
         ],
 
-        Category::Dessert => return vec![
+        Category::Drink => return vec![
             MenuItem::new(Category::Drink, "Miami Vice".to_string(), "/assets/img/Miami-Vice.jpg".to_string(), 4.99),
             MenuItem::new(Category::Drink, "Shirley Temple".to_string(), "/assets/img/Shirley.jpg".to_string(), 3.99),
             MenuItem::new(Category::Drink, "Chocolate Milk".to_string(), "/assets/img/Chocolate-Milk.jpg".to_string(), 2.99),
@@ -71,7 +71,7 @@ pub fn get_category(category: Category) -> Vec<MenuItem> {
             MenuItem::new(Category::Drink, "Margarita".to_string(), "/assets/img/Margarita.jpg".to_string(), 4.99),
         ],
 
-        Category::Drink => vec![
+        Category::Dessert => vec![
             MenuItem::new(Category::Dessert, "Chocolate Ice Cream".to_string(), "/assets/img/Chocolate-Ice.jpg".to_string(), 3.99),
             MenuItem::new(Category::Dessert, "Homemade Brownie".to_string(), "/assets/img/Brownie.jpg".to_string(), 2.99),
             MenuItem::new(Category::Dessert, "Apple Pie".to_string(), "/assets/img/Apple-Pie.jpg".to_string(), 3.99),
