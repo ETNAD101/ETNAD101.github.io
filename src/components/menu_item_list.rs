@@ -91,7 +91,7 @@ pub struct MenuListProps {
 pub fn itemlist(MenuListProps { items }: &MenuListProps) -> Html {
     items.iter().map(|item: &MenuItem| html!{
         <div class={item.category.to_string()}>
-            <p>{format!("{}: {}", item.name, item.price)}</p>
+            <p>{format!("{} - ${}", item.name, item.price)}</p>
             <img src={item.image.clone()}/>
         </div>
     }).collect()
