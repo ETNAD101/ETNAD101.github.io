@@ -41,7 +41,7 @@ impl MenuItem {
     }
 }
 
-pub fn get_category(category: Category) -> Vec<MenuItem> {
+pub fn get_category_from_menu(category: Category) -> Vec<MenuItem> {
     match category {
         Category::Appetizer => return vec![
             MenuItem::new(Category::Appetizer, "Guacamole & Chips".to_string(), "/assets/img/Guacamole.jpg".to_string(), 5.99),
@@ -82,19 +82,31 @@ pub fn get_category(category: Category) -> Vec<MenuItem> {
     }
 }
 
+
 #[derive(Properties, PartialEq)]
 pub struct MenuListProps {
     pub items: Vec<MenuItem>,
+    pub on_click: Callback<MenuItem>,
 }
 
 #[function_component(ItemList)]
-pub fn itemlist(MenuListProps { items }: &MenuListProps) -> Html {
-    items.iter().map(|item: &MenuItem| html!{
+pub fn itemlist(MenuListProps { items, on_click }: &MenuListProps) -> Html {
+    items.iter().map(|item: &MenuItem| {
+        let on_item_select = {
+            let on_click = on_click.clone();
+            let item = item.clone();
+            Callback::from(move |_| {
+                on_click.emit(item.clone())
+            })
+        };
+
+        html!{
         <div class={item.category.to_string()}>
             <p>{format!("{} - ${}", item.name, item.price)}</p>
-            <img src={item.image.clone()}/>
+            <img onclick={on_item_select} src={item.image.clone()}/>
             <br/>
-            <button>{"Add to cart"}</button>
+            <button>{"Order"}</button>
         </div>
+        }
     }).collect()
 }
