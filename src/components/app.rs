@@ -1,13 +1,14 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
 use crate::components::menu_item_list::MenuItem;
 use crate::components::menu_item_list::Category;
 use crate::components::menu_item_list::ItemList;
 use crate::components::menu_item_list::get_category_from_menu;
 use crate::components::item_details::ItemDetails;
+use crate::components::route::Route;
 
-
-#[function_component(App)]
-pub fn app() -> Html {
+#[function_component(Home)]
+fn home() -> Html {
     let appetizers = get_category_from_menu(Category::Appetizer);
     let entrees = get_category_from_menu(Category::Entree);
     let drinks = get_category_from_menu(Category::Drink);
@@ -52,6 +53,22 @@ pub fn app() -> Html {
                 <p>{"Clicked"}</p>
             </div>
         </div>
+    }
+}
 
+fn switch(routes: Route) -> Html{
+    match routes {
+        Route::Home => html! {<Home/>},
+        Route::Bill => html! {<p>{"BILL"}</p>},
+        Route::NotFound => html!{<p>{"ERROR"}</p>},
+    }
+}
+
+#[function_component(App)]
+pub fn app() -> Html {
+    html! {
+    <BrowserRouter>
+        <Switch<Route> render={switch}/>
+    </BrowserRouter>
     }
 }
