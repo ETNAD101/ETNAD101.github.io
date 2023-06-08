@@ -93,6 +93,8 @@ pub fn itemlist(MenuListProps { items }: &MenuListProps) -> Html {
         <div class={item.category.to_string()}>
             <p>{format!("{} - ${}", item.name, item.price)}</p>
             <img src={item.image.clone()}/>
+            <br/>
+            <button>{"Add to cart"}</button>
         </div>
     }).collect()
 }
