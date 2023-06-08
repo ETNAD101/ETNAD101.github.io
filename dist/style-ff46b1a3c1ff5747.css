@@ -1,15 +1,14 @@
 html {
     background-color: black;
+    color: white;
 }
 
 h1 {
-    color: white;
     display: flex;
     justify-content: center;
 }
 
 .ItemCategory {
-    color: white;
     display: flex;
     justify-content: center;
     flex-direction: row;
