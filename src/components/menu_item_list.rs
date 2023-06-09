@@ -1,6 +1,8 @@
 use yew::prelude::*;
 use std::fmt;
 
+use crate::components::order_button::OrderButton;
+
 #[derive(Clone, PartialEq)]
 pub enum Category {
     Appetizer,
@@ -109,7 +111,7 @@ pub fn itemlist(MenuListProps { items }: &MenuListProps) -> Html {
             <p>{format!("{} ⋅ ${}", item.name, item.price)}</p>
             <a href={format!("/description/{}", item.id)}><img src={item.image.clone()}/></a>
             <br/>
-            <button>{"Order"}</button>
+            <OrderButton/>
         </div>
         }
     }).collect()
