@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use crate::backend::menu_item::MenuItem;
+use crate::backend::menu::MenuItem;
 
 #[derive(Properties, PartialEq)]
 pub struct ItemDetailProps {
@@ -10,7 +10,7 @@ pub struct ItemDetailProps {
 pub fn item_details(ItemDetailProps { item }: &ItemDetailProps) -> Html {
     html! {
         <div>
-            <p>{item.description.clone()}</p>
+            <p class={"description"}>{item.description.clone()}</p>
         </div>
     }
 }

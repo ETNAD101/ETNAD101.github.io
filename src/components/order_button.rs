@@ -9,6 +9,6 @@ pub fn order_button() -> Html {
     });
 
     html! {
-        <button onclick={on_click}>{"Order"}</button>
+        <button class={"orderButton"} onclick={on_click}>{"Order"}</button>
     }
 }

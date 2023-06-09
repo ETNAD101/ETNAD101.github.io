@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::backend::menu_item::MenuItem;
+use crate::backend::menu::MenuItem;
 use crate::components::order_button::OrderButton;
 
 
@@ -14,9 +14,9 @@ pub fn itemlist(MenuListProps { items }: &MenuListProps) -> Html {
 
     items.iter().map(|item: &MenuItem| {
         html!{
-        <div class={item.category.to_string()}>
+        <div class={"item"}>
             <p>{format!("{} ⋅ ${}", item.name, item.price)}</p>
-            <a href={format!("/description/{}", item.id)}><img src={item.image.clone()}/></a>
+            <a href={format!("/description/{}", item.id)}><img class={"itemImage"} src={item.image.clone()}/></a>
             <br/>
             <OrderButton/>
         </div>
