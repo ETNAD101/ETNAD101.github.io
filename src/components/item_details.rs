@@ -1,5 +1,5 @@
 use yew::prelude::*;
-use crate::components::menu_item_list::MenuItem;
+use crate::backend::menu_item::MenuItem;
 
 #[derive(Properties, PartialEq)]
 pub struct ItemDetailProps {

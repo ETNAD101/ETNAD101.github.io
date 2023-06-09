@@ -6,8 +6,8 @@ Creative Name: ____
 
 mod components;
 mod pages;
-mod app;
-use app::App;
+mod backend;
+use pages::app::App;
 
 fn main() {
     yew::Renderer::<App>::new().render();

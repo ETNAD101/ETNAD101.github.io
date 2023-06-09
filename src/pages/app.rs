@@ -3,9 +3,7 @@ use yew_router::prelude::*;
 
 use crate::pages::menu::Menu;
 use crate::pages::description::Description;
-use crate::components::route::Route;
-
-
+use crate::backend::route::Route;
 
 fn switch(routes: Route) -> Html{
     match routes {

@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::menu_item_list::get_item_from_id;
+use crate::backend::menu_item::get_item_from_id;
 use crate::components::order_button::OrderButton;
 
 #[derive(Properties, PartialEq)]

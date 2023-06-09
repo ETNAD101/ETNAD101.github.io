@@ -1,7 +1,7 @@
 use yew::prelude::*;
-use crate::components::menu_item_list::Category;
+use crate::backend::category::Category;
 use crate::components::menu_item_list::ItemList;
-use crate::components::menu_item_list::get_category_from_menu;
+use crate::backend::menu_item::get_category_from_menu;
 
 #[function_component(Menu)]
 pub fn menu() -> Html {
