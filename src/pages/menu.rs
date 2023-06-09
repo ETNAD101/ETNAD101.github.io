@@ -11,7 +11,7 @@ pub fn menu() -> Html {
     let desserts = get_category_from_menu(Category::Dessert);
     
     html! {
-        <div>
+        <div class={"menu"}>
             <h1>{"Drinks"}</h1>
             <div class={"ItemCategory"}>  
                 <ItemList items={drinks} />
