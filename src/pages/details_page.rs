@@ -5,14 +5,14 @@ use crate::components::order_button::OrderButton;
 use crate::components::navbar::Navbar;
 
 #[derive(Properties, PartialEq)]
-pub struct DetailProps {
-    pub item_name: u16,
+pub struct Props {
+    pub item_id: u16,
 }
 
 
 #[function_component(DetailsPage)]
-pub fn detials(DetailProps { item_name }: &DetailProps) -> Html {
-    let item = get_item_from_id(item_name.to_owned()).unwrap();
+pub fn detials(Props { item_id }: &Props) -> Html {
+    let item = get_item_from_id(item_id.to_owned()).unwrap();
 
     html! {
         <>
@@ -21,8 +21,8 @@ pub fn detials(DetailProps { item_name }: &DetailProps) -> Html {
             <div class={"details"}>
                 <h1>{format!("{} ⋅ ${}", item.name, item.price)}</h1>
                 <img src={item.image.clone()}/>
-                <p>{item.description}</p>
-                <OrderButton/>
+                <p>{item.description.clone()}</p>
+                <OrderButton item={item}/>
             </div>
         </>
     }

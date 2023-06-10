@@ -5,12 +5,12 @@ use crate::components::order_button::OrderButton;
 
 
 #[derive(Properties, PartialEq)]
-pub struct MenuListProps {
+pub struct Props {
     pub items: Vec<MenuItem>,
 }
 
 #[function_component(ItemList)]
-pub fn itemlist(MenuListProps { items }: &MenuListProps) -> Html {
+pub fn itemlist(Props { items }: &Props) -> Html {
 
     items.iter().map(|item: &MenuItem| {
         html!{
@@ -18,7 +18,7 @@ pub fn itemlist(MenuListProps { items }: &MenuListProps) -> Html {
             <p>{format!("{} ⋅ ${}", item.name, item.price)}</p>
             <a href={format!("/description/{}", item.id)}><img class={"itemImage"} src={item.image.clone()}/></a>
             <br/>
-            <OrderButton/>
+            <OrderButton item={item.clone()}/>
         </div>
         }
     }).collect()

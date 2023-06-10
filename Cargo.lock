@@ -46,6 +46,8 @@ name = "comp_sci_order_system"
 version = "0.1.0"
 dependencies = [
  "gloo",
+ "wasm-bindgen",
+ "web-sys",
  "yew",
  "yew-router",
 ]
