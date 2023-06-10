@@ -10,7 +10,7 @@ pub struct DetailProps {
 }
 
 
-#[function_component(Details)]
+#[function_component(DetailsPage)]
 pub fn detials(DetailProps { item_name }: &DetailProps) -> Html {
     let item = get_item_from_id(item_name.to_owned()).unwrap();
 

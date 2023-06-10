@@ -2,11 +2,12 @@ use yew::prelude::*;
 
 use crate::components::navbar::Navbar;
 
-#[function_component(BillPage)]
-pub fn bill_page() -> Html {
+#[function_component(NotFound)]
+pub fn not_found_page() -> Html {
     html! {
         <>
             <Navbar/>
+            <p>{"Page Not Found"}</p>
         </>
     }
 }

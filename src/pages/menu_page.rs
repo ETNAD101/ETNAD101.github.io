@@ -4,7 +4,7 @@ use crate::components::item_list::ItemList;
 use crate::components::navbar::Navbar;
 use crate::backend::menu::get_category_from_menu;
 
-#[function_component(Menu)]
+#[function_component(MenuPage)]
 pub fn menu() -> Html {
     let appetizers = get_category_from_menu(Category::Appetizer);
     let entrees = get_category_from_menu(Category::Entree);
