@@ -1,5 +1,6 @@
 use yew::prelude::*;
-use gloo::console::log;
+use crate::backend::route::Route;
+use yew_router::prelude::use_navigator;
 
 use crate::backend::menu::MenuItem;
 
@@ -11,9 +12,11 @@ pub struct Props {
 
 #[function_component(OrderButton)]
 pub fn order_button(Props {item}: &Props) -> Html {
+    let navigator = use_navigator().unwrap();
+    let id = item.id.clone();
 
     let on_click = Callback::from(move |_| {
-        log!("Order Placed");
+        navigator.push(&Route::Select { item_id: id });
     });
 
     html! {

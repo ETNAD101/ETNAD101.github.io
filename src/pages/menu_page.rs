@@ -10,7 +10,7 @@ pub fn menu() -> Html {
     let entrees = get_category_from_menu(Category::Entree);
     let drinks = get_category_from_menu(Category::Drink);
     let desserts = get_category_from_menu(Category::Dessert);
-    
+
     html! {
         <>
             <Navbar/>

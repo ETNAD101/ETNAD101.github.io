@@ -1,8 +1,9 @@
 use crate::backend::menu::MenuItem;
+use yewdux::prelude::*;
+use serde::{Serialize, Deserialize};
 
+#[derive(Clone, PartialEq, Serialize, Deserialize)]
 pub struct CartItem {
-    person: String,
-    item: MenuItem,
+    pub person: String,
+    pub item: MenuItem,
 }
-
-pub static mut CART: Vec<CartItem> = vec![];

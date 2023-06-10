@@ -12,7 +12,7 @@ fn switch(routes: Route) -> Html{
     match routes {
         Route::Home => html! {<MenuPage/>},
         Route::Description{item_id} => html! {<DetailsPage item_id={item_id}/>},
-        Route::Select => html! {<PersonSelectPage/>},
+        Route::Select{item_id} => html! {<PersonSelectPage item_id={item_id}/>},
         Route::Bill => html! {<BillPage/>},
         Route::NotFound => html!{<NotFound/>},
     }

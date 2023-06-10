@@ -6,8 +6,8 @@ pub enum Route {
     Description{item_id: u16},
     #[at("/")]
     Home,
-    #[at("/person-select")]
-    Select,
+    #[at("/person-select/:item_id")]
+    Select{item_id: u16},
     #[at("/bill")]
     Bill,
     #[not_found]

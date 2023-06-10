@@ -1,6 +1,7 @@
 use crate::backend::category::Category;
+use serde::{Serialize, Deserialize};
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Serialize, Deserialize)]
 pub struct MenuItem {
     pub id: u16,
     pub category: Category,
@@ -55,7 +56,6 @@ fn make_menu() -> Vec<MenuItem> {
         MenuItem::new(Category::Dessert, 25, "Tiramisu".to_string(), "/assets/img/Tiramisu.jpg".to_string(), 4.99, "Coffee flavoured dessert made of ladyfingers dipped in coffee, layered with a whipped mixture of eggs, sugar, and mascarpone cheese, flavoured with cocoa".to_string()),
     ]
 }
-
 
 pub fn get_category_from_menu(category: Category) -> Vec<MenuItem> {
     let menu = make_menu();

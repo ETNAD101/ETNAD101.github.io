@@ -11,3 +11,5 @@ yew-router = "0.17.0"
 gloo = "0.8.0"
 wasm-bindgen = "0.2.86"
 web-sys = { verison = "0.3.56", features = ["HtmlInputElement"] }
+yewdux = "0.9.3"
+serde = "1.0.163"
