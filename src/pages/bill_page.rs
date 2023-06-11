@@ -13,12 +13,12 @@ It gives the option to pick combined bills or seperate bills
 
 #[function_component(BillPage)]
 pub fn bill_page() -> Html {
-    let (cart, dispatch) = use_store::<CartStore>();
+    let (cart, _dispatch) = use_store::<CartStore>();
     
     let temp: Html = cart.cart_items.iter().map(|item: &CartItem| {
         html!{
         <div class={"item"}>
-            <p>{format!("{}", item.person)}</p>
+            <p>{format!("{}: {} ⋅ ${}", item.person, item.item.name, item.item.price)}</p>
         </div>
         }
     }).collect();
