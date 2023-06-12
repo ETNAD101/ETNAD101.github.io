@@ -5,3 +5,4 @@ pub mod navbar;
 pub mod seperate_bills;
 pub mod text_input;
 pub mod clear_cart;
+pub mod person_button;
