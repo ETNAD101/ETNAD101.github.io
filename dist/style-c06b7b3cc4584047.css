@@ -2,12 +2,16 @@ html {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(223, 222, 222);
     color: black;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
     display: flex;
     background-color: red;
     gap: 1em;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar > a {
@@ -78,5 +82,17 @@ html {
 .details > p {
     font-size: 2em;
     text-align: center;
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
 }
 

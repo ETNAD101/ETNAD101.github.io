@@ -8,6 +8,7 @@ pub fn order_button() -> Html {
 
     let on_click = Callback::from(move |_| {
         dispatch.reduce_mut(|cart| cart.cart_items.clear());
+        dispatch.reduce_mut(|cart: &mut CartStore| cart.people.clear());
     });
 
     html! {

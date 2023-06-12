@@ -16,7 +16,7 @@ pub struct Props {
 
 #[function_component(PersonSelectPage)]
 pub fn person_select(Props {item_id}: &Props) -> Html {
-    let dispatch = Dispatch::<CartStore>::new();
+    let (cart, dispatch) = use_store::<CartStore>();
 
     let navigator = use_navigator().unwrap();
 
@@ -24,11 +24,16 @@ pub fn person_select(Props {item_id}: &Props) -> Html {
 
     let onchange = Callback::from(move |person: String| {
         let cart_item = CartItem {
-            person: person,
+            person: person.clone(),
             item: item.clone(),
         };
         dispatch.reduce_mut(|cart| cart.cart_items.push(cart_item));
-        navigator.push(&Route::Bill);
+        
+        if !cart.people.contains(&person) {
+            dispatch.reduce_mut(|cart| cart.people.push(person));
+        }
+
+        navigator.push(&Route::Home);
     });
 
     html! {
