@@ -4,8 +4,8 @@ use yew_router::prelude::*;
 pub enum Route {
     #[at("/description/:item_id")]
     Description{item_id: u16},
-    #[at("/")]
-    Home,
+    #[at("/:category")]
+    Menu{category: String},
     #[at("/person-select/:item_id")]
     Select{item_id: u16},
     #[at("/bill")]

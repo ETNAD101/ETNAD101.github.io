@@ -3,6 +3,7 @@ use yewdux::prelude::*;
 use yew_router::prelude::use_navigator;
 
 use crate::backend::cart::CartItem;
+use crate::backend::category::Category;
 use crate::backend::menu::get_item_from_id;
 use crate::components::navbar::Navbar;
 use crate::components::text_input::TextInput;
@@ -34,7 +35,7 @@ pub fn person_select(Props {item_id}: &Props) -> Html {
             dispatch.reduce_mut(|cart| cart.people.push(person).clone());
         }
 
-        navigator.push(&Route::Home);
+        navigator.push(&Route::Menu{category: Category::Appetizer.to_string()});
     });
 
     html! {

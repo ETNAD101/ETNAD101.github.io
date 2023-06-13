@@ -10,7 +10,7 @@ use crate::backend::route::Route;
 
 fn switch(routes: Route) -> Html{
     match routes {
-        Route::Home => html! {<MenuPage/>},
+        Route::Menu{category} => html! {<MenuPage category={category}/>},
         Route::Description{item_id} => html! {<DetailsPage item_id={item_id}/>},
         Route::Select{item_id} => html! {<PersonSelectPage item_id={item_id}/>},
         Route::Bill => html! {<BillPage/>},
