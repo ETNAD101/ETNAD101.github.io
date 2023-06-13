@@ -92,3 +92,27 @@ html {
     padding: 1em;
 }
 
+.seperateBills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bill {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    margin: 1em;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.billTitle {
+    text-decoration: underline;
+}
+
+.billedItem {
+    border-radius: 5px;
+}

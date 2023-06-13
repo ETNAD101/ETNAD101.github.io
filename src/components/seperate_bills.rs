@@ -4,7 +4,7 @@ use crate::stores::cart_store::CartStore;
 use crate::backend::cart::CartItem;
 
 #[function_component(SeperateBills)]
-pub fn carts() -> Html {
+pub fn seperate_bill() -> Html {
     let (cart, _dispatch) = use_store::<CartStore>();
     
     let mut sorted_carts: Vec<Html> = vec![];
@@ -18,7 +18,7 @@ pub fn carts() -> Html {
             total_f += item.item.price as f64;
             
             html!{
-                <p>{format!("{} ⋅ ${}", item.item.name, item.item.price)}</p>
+                <p class={"billedItem"}>{format!("{} ⋅ ${}", item.item.name, item.item.price)}</p>
             }
         }).collect();
 
@@ -28,7 +28,7 @@ pub fn carts() -> Html {
 
         let bill: Html = html! {
             <div class={"bill"}>
-                <h1>{person}</h1>
+                <h1 class={"billTitle"}>{person}</h1>
                 {listed_items}
                 {total}
             </div>
@@ -38,9 +38,9 @@ pub fn carts() -> Html {
     }
 
     html! {
-        <>
+        <div class={"seperateBills"}>
             {for sorted_carts}
-        </>
+        </div>
     }
 }
 
