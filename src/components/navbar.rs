@@ -3,7 +3,6 @@ use web_sys::HtmlInputElement;
 use yew::prelude::*;
 use yew_router::prelude::use_navigator;
 use crate::backend::route::Route;
-use crate::backend::category::Category;
 
 #[function_component(Navbar)]
 pub fn navbar() -> Html {
@@ -15,7 +14,7 @@ pub fn navbar() -> Html {
             .unwrap()
             .unchecked_into::<HtmlInputElement>()
             .value();
-        
+
         navigator.push(&Route::Menu { category: route });
     });
 
@@ -29,7 +28,6 @@ pub fn navbar() -> Html {
                 <option value="Entree">{"Entree"}</option>
                 <option value="Dessert">{"Dessert"}</option>
             </select>
-            <a href={"/"}><h1>{"Menu"}</h1></a>
             <a href={"/bill"}><h1>{"Bill"}</h1></a>
         </div>
     }
