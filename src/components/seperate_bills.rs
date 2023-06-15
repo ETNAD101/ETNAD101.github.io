@@ -22,14 +22,18 @@ pub fn seperate_bill() -> Html {
             }
         }).collect();
 
+        let subtotal = html! {
+            <p>{format!("Subtotal: ${:.2}", total_f)}</p>
+        };
         let total = html! {
-            <p>{format!("Total: ${:.2}", total_f)}</p>
+            <p>{format!("Total: ${:.2}", total_f + (total_f * 0.13))}</p>
         };
 
         let bill: Html = html! {
             <div class={"bill"}>
                 <h1 class={"billTitle"}>{person}</h1>
                 {listed_items}
+                {subtotal}
                 {total}
             </div>
         };

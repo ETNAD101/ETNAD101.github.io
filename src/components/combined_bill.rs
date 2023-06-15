@@ -17,14 +17,18 @@ pub fn combined_bill() -> Html {
         }
     }).collect();
 
+    let subtotal = html! {
+        <p>{format!("Subtotal: ${:.2}", total_f)}</p>
+    };
     let total = html! {
-        <p>{format!("Total: ${:.2}", total_f)}</p>
+        <p>{format!("Total: ${:.2}", total_f + (total_f * 0.13))}</p>
     };
 
     html! {
         <div class={"bill"}>
             <h1 class={"billTitle"}>{"Total"}</h1>
             {listed_items}
+            {subtotal}
             {total}
         </div>
     }
