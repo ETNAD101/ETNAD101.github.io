@@ -41,9 +41,11 @@ pub fn bill_page() -> Html {
         <>
             <Navbar/>
             {display_bill}
-            <ClearCart/>
-            <button onclick={seperate_click}>{"Seperate Bills"}</button>
-            <button onclick={combined_click}>{"Combined Bill"}</button>
+            <div class="billButtons">
+                <ClearCart/>
+                <button onclick={seperate_click}>{"Seperate Bills"}</button>
+                <button onclick={combined_click}>{"Combined Bill"}</button>
+            </div>
         </>
     }
 }

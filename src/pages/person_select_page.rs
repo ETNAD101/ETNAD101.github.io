@@ -41,6 +41,7 @@ pub fn person_select(Props {item_id}: &Props) -> Html {
     html! {
         <>
             <Navbar/>
+            <h1>{"Who is ordering this item?"}</h1>
             <TextInput name={"person"} on_change={onchange}/>
         </>
     }

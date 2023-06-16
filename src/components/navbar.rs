@@ -20,9 +20,7 @@ pub fn navbar() -> Html {
 
     html! {
         <div class={"navbar"}>
-            <label for="category">{"Menu"}</label>
-
-            <select name="category" onchange={on_change}>
+            <select class="categorySelect" name="category" onchange={on_change}>
                 <option value="Apppetizer">{"Apppetizer"}</option>
                 <option value="Drink">{"Drink"}</option>
                 <option value="Entree">{"Entree"}</option>

@@ -23,6 +23,6 @@ pub fn text_input(Props { name, on_change }: &Props) -> Html {
     });
 
     html! {
-        <input type="text" name={name.clone()} onchange={onchange} />
+        <input class="textInput" type="text" name={name.clone()} onchange={onchange} />
     }
 }

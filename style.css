@@ -16,7 +16,7 @@ html {
     margin-left: 1em;
 }
 
-.orderButton {
+button {
     border: none;
     border-radius: 5px;
     font-size: 1em;
@@ -25,11 +25,11 @@ html {
     
 }
 
-.orderButton:hover {
+button:hover {
     text-decoration: underline;
 }
 
-.orderButton:active {
+button:active {
     background-color: rgb(223, 223, 223);
 }
 
@@ -115,4 +115,20 @@ html {
 
 .billedItem {
     border-radius: 5px;
+}
+
+.categorySelect {
+    border: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: red;
+    color: white;
+    padding-left: 1em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.billButtons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
 }
